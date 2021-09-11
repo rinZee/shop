@@ -23,8 +23,16 @@ const ProductListing = () => {
   }, []);
   console.log("Products:", products);
   return (
-    <div className="ui grid container">
-      <ProductComponent />
+    <div>
+      {products.map((product, i) => (
+        <ProductComponent
+          key={i}
+          id={product.id}
+          title={product.title}
+          price={product.price}
+          image={product.image}
+        />
+      ))}
     </div>
   );
 };
