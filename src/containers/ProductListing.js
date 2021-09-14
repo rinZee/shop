@@ -21,18 +21,9 @@ const ProductListing = () => {
   useEffect(() => {
     fetchProducts();
   }, []);
-  console.log("Products:", products);
   return (
     <div>
-      {products.map((product, i) => (
-        <ProductComponent
-          key={i}
-          id={product.id}
-          title={product.title}
-          price={product.price}
-          image={product.image}
-        />
-      ))}
+      <ProductComponent />
     </div>
   );
 };
